@@ -1,0 +1,21 @@
+{
+  "name": "javascript-cs",
+  "version": "0.0.0",
+  "description": "javascript library containing cs algorithms",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Crawford",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "^2.3.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-cli": "0.0.4",
+    "karma-jasmine": "^0.3.5"
+  }
+}

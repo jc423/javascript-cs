@@ -8,13 +8,14 @@ function Queue(){
 }
 
 Queue.prototype.queue = function(item){
+    var itemToQueue = new QueueItem(item);
     if(this.first){
-        this.last.next = item;
-        item.previous = this.last;
-        this.last = item;
+        this.last.next = itemToQueue;
+        itemToQueue.previous = this.last;
+        this.last = itemToQueue;
     }else{
-        this.first = item;
-        this.last = item;
+        this.first = itemToQueue;
+        this.last = itemToQueue;
     }
 };
 
@@ -22,7 +23,7 @@ Queue.prototype.dequeue = function(){
     if(this.first){
         var firstItem = this.first;
         this.first = this.first.next;
-        return firstItem;
+        return firstItem.value;
     }else{
         return null;
     }

@@ -5,22 +5,16 @@
 describe('Queue',function(){
    it('should contain item after queuing',function(){
        var queue = new Queue();
-       var item = new QueueItem('A');
-       queue.queue(item);
+       queue.queue('A');
        expect(queue.first.value).toBe('A');
    });
 
     it('should contain number of elements in the queue',function(){
         var queue = new Queue();
-        var item1 = new QueueItem('A');
-        var item2 = new QueueItem('B');
-        var item3 = new QueueItem('C');
-        var item4 = new QueueItem('D');
-
-        queue.queue(item1);
-        queue.queue(item2);
-        queue.queue(item3);
-        queue.queue(item4);
+        queue.queue('A');
+        queue.queue('B');
+        queue.queue('C');
+        queue.queue('D');
 
         expect(queue.count()).toBe(4);
     });
@@ -34,35 +28,26 @@ describe('Dequeue',function(){
 
     it('should return the first item in the queue',function(){
         var queue = new Queue();
-        var item1 = new QueueItem('A');
-        var item2 = new QueueItem('B');
-        var item3 = new QueueItem('C');
-        queue.queue(item1);
-        queue.queue(item2);
-        queue.queue(item3);
-        expect(queue.dequeue().value).toBe('A');
+        queue.queue('A');
+        queue.queue('B');
+        queue.queue('C');
+        expect(queue.dequeue()).toBe('A');
     });
 
     it('should remove items from the queue',function(){
         var queue = new Queue();
-        var item1 = new QueueItem('A');
-        var item2 = new QueueItem('B');
-        var item3 = new QueueItem('C');
-        queue.queue(item1);
-        queue.queue(item2);
-        queue.queue(item3);
+        queue.queue('A');
+        queue.queue('B');
+        queue.queue('C');
         queue.dequeue();
         expect(queue.count()).toBe(2);
     });
 
     it('should not remove more items than were in queue',function(){
         var queue = new Queue();
-        var item1 = new QueueItem('A');
-        var item2 = new QueueItem('B');
-        var item3 = new QueueItem('C');
-        queue.queue(item1);
-        queue.queue(item2);
-        queue.queue(item3);
+        queue.queue('A');
+        queue.queue('B');
+        queue.queue('C');
         var dq1 = queue.dequeue();
         var dq2 = queue.dequeue();
         var dq3 = queue.dequeue();

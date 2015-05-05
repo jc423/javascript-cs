@@ -54,4 +54,21 @@ describe('Dequeue',function(){
         queue.dequeue();
         expect(queue.count()).toBe(2);
     });
+
+    it('should not remove more items than were in queue',function(){
+        var queue = new Queue();
+        var item1 = new QueueItem('A');
+        var item2 = new QueueItem('B');
+        var item3 = new QueueItem('C');
+        queue.queue(item1);
+        queue.queue(item2);
+        queue.queue(item3);
+        var dq1 = queue.dequeue();
+        var dq2 = queue.dequeue();
+        var dq3 = queue.dequeue();
+        var dq4 = queue.dequeue();
+
+        expect(queue.count()).toBe(0);
+        expect(dq4).toBeNull();
+    });
 });

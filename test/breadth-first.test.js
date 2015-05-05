@@ -8,15 +8,6 @@ describe('Breadth-first search',function(){
         expect(tree.breadthFirstSearch()).toEqual([]);
     });
 
-    it('should return nodes in tree ordered by level',function(){
-        var nodeB = new Node('B');
-        var nodeC = new Node('C');
-        var nodeA = new Node('A',[nodeB,nodeC]);
-        var tree = new Tree(nodeA);
-
-        expect(tree.breadthFirstSearch()).toEqual(['A','B','C']);
-    });
-
     //TODO: Order of result should not matter
     it('should return nodes in tree ordered by level',function(){
         var nodeG = new Node('G');
